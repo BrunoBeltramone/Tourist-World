@@ -1,0 +1,13 @@
+------------------------------------------------ P O R  H A C E R --------------------------------------------------------------
+
+2- 
+
+
+
+
+
+------------------------------------------------ R E S U E L T O --------------------------------------------------------------
+
+1- Cada vez que ingreso a get /countries, hago un requerimineto de la api con fillDataBase (lo cual consume recursos). 
+   El objetivo seria verificar si la base de datos tiene contenido -> si es asi no se ejecuta el fillDataBase y ahorro recursos.
+
