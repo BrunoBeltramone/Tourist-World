@@ -1,6 +1,7 @@
 ------------------------------------------------ P O R  H A C E R --------------------------------------------------------------
 
 2- Llenar la base de datos apenas de Cree el servidor.
+3- Tener una plantilla de colores. Asi cuando quiera modificar los colores lo hago de forma rapida y mantengo del mismo color los elementos
 
 
 
