@@ -1,11 +1,11 @@
 import React from 'react'
+import { Carta } from './Card_Style'
 
 export const Card = ({nombre, imagen, continente}) => {
   return (
-    <div>
-        <h2>{nombre}</h2>
-        <br />
+    <Carta>
         <img src={imagen} alt="NI" />
-    </div>
+        <h2>{nombre}</h2>
+    </Carta>
   )
 }
