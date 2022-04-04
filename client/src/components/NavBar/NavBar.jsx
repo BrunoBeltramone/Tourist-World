@@ -2,30 +2,13 @@ import React from "react";
 import Logo from "./../../images/mundial.gif"
 import { Container, LogoContainer, Menu, MenuItem, MenuItemLink, Wrapper } from "./NavBar_Style";
 
-// export default function NavBar() {
-//     return(
-//         <nav>
-//             <ul>
-//                 <li>
-//                     <NavLink to={'/countries'}> Home </NavLink>
-//                 </li>
-//                 <li>
-//                     <NavLink to={'/activity'}> Activity </NavLink>
-//                 </li>
-//                 <li>
-//                     <NavLink to={'/about'}> About </NavLink>
-//                 </li>
-//             </ul>
-//         </nav>
-//     )
-// }
 
 export default function NavBar() {
     return(
         <Container>
             <Wrapper>
                 <LogoContainer>
-                    <img src={Logo}/>
+                    <img src={Logo} alt={'h'}/>
                     <p>Tourist</p>
                     <p>World</p>
                 </LogoContainer>

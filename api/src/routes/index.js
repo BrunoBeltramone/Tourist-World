@@ -1,5 +1,4 @@
 const { Router } = require('express');
-const axios = require('axios');
 const activityRouter = require('./activity.js');
 const countriesRouter = require('./countries.js');
 
