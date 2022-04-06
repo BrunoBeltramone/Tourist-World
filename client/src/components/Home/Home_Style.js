@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import { colors } from "../../theme";
 
 export const Container = styled.div`
     display: block;
-    color: ${colors.PrimaryOrange};
     flex-flow: row wrap;
     background-image: url('https://p4.wallpaperbetter.com/wallpaper/993/439/626/the-sky-clouds-flight-nature-wallpaper-preview.jpg');
-    background-size: contain;
+    background-size: cover;
+    background-attachment: fixed;
 `;
 
 export const CountryContainer = styled.div`

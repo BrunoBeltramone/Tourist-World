@@ -6,6 +6,7 @@ import Home from './components//Home/Home.jsx'
 import Activity from './components/Activity/Activity';
 import About from './components/About/About';
 import Landing from './components/Landing_Page/Landing';
+import CountryDetail from './components/CountryDetail/CountryDetail';
 
 function App() {
   return (
@@ -14,9 +15,14 @@ function App() {
         <Landing />
       </Route>
 
-      <Route path={'/countries'}>
+      <Route exact path={'/countries'}>
         <NavBar/>
         <Home />
+      </Route>
+
+      <Route path={'/countries/:id'}>
+        <NavBar/>
+        <CountryDetail />
       </Route>
 
       <Route path={'/activity'}>

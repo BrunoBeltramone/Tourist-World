@@ -15,7 +15,7 @@ padding: 100px;
 width: 40vw;
 height: 60vh;
 margin-left: 30%;
-background-color:  ${colors.PrimaryOrangeDIF};
+background-color:  ${colors.SecondBlueForm};
 color:white;
 text-align: center;
 font-size: 2rem;

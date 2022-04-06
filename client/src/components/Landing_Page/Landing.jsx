@@ -7,7 +7,7 @@ export default function Landing() {
       <Container>
         <div>La mejor Landing del Planeta Paaa</div>
         <MenuItemLink>
-          <NavLink to={'/countries'}>Home</NavLink>
+          <NavLink to={'/countries'}> GoCountries</NavLink>
         </MenuItemLink>
       </Container>
       )

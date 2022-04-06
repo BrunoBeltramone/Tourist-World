@@ -20,6 +20,7 @@ font-size: 5rem;
 font-weight: 300;
 cursor: pointer;
 transition: 0.5s all ease;
+background-color: orangered;
 
 &:hover{
     color: white;
