@@ -1,43 +1,85 @@
 import React, { useEffect, useState } from "react";
-import { Cartas, Container, Filtros, CountryContainer } from "./Home_Style";
+import { Cartas, Container, Filtros, CountryContainer, Select } from "./Home_Style";
 import { useDispatch, useSelector,  } from "react-redux";
-import { getAllCountries } from "../../redux/actions";
+import { getAllCountries, filterCountriesByContinent, filterCountriesByName } from "../../redux/actions";
 import { Card } from "./Card";
+import SearchBar from "./SearchBar/SearchBar";
+import Paginado from "./Paginado";
 
 export default function Home() {
   const dispatch = useDispatch();
-  const AllCountries = useSelector((state) => state.countries);
+  const Countries = useSelector((state) => state.countries);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [order, setOrder] = useState("");
+  const [countriesPerPage, setcountriesPerPage] = useState(10);
+  const lastCountry = currentPage * countriesPerPage;
+  const firsCountry = lastCountry - countriesPerPage;
+  const currentCountries = Countries.slice(firsCountry, lastCountry)
+
+  const paginado = (pageNumber) => {
+    setCurrentPage(pageNumber)
+  }
+
 
   useEffect(() => {
       dispatch(getAllCountries());
-  }, []);
+  }, [dispatch]);
+
+  function handleFilterByName(e){
+    e.preventDefault();
+    dispatch(filterCountriesByName(e.target.value));
+    setOrder(`Ordenado ${ e.target.value}`)
+  }
+
+  var handleFilterByContinent = (e) => {
+    e.preventDefault();
+    setCurrentPage(1);
+    dispatch(filterCountriesByContinent(e.target.value))
+    setOrder(`Ordenado ${ e.target.value}`)
+  }
+
 
 
   return (
     <Container>
       <br />
+          <Paginado
+            countriesPerPage={countriesPerPage}
+            countries={Countries.length}
+            paginado= {paginado}
+          />
+          <br/>
+          <br/>
       <Filtros>
-        <select>
-          <option> A - Z </option>
-          <option> Z - A </option>
-        </select>
+        <SearchBar/>
 
-        <select>
-          <option>Continente</option>
-        </select>
+        <Select onChange={(e) => handleFilterByName(e)}>
+          <option value='asc'> Ascendente </option>
+          <option value='desc'> Descendente </option>
+        </Select>
 
-        <select>
+        <Select onChange={(e) => handleFilterByContinent(e)}>
+          <option value={'All'}> Continente </option>
+          <option value={'Africa'}> Africa </option>
+          <option value={'Americas'}> America </option>
+          <option value={'Antarctic'}> Antartida </option>
+          <option value={'Asia'}> Asia </option>
+          <option value={'Europe'}> Europa </option>
+          <option value={'Oceania'}> Oceania </option>
+        </Select>
+
+        <Select>
           <option>Actividad Turistica</option>
-        </select>
+        </Select>
       </Filtros>
       <CountryContainer>
         <br />
         <br />
         <Cartas>
-          {AllCountries?.map((country) => {
+          {currentCountries?.map((country) => {
             return (
               <Card
-                nombre={country.nombre}
+              nombre={country.nombre}
                 id={country.id}
                 capital={country.capital}
                 subregion={country.subregion}
@@ -46,9 +88,9 @@ export default function Home() {
                 continente={country.continente}
                 imagen={country.imagen}
                 key={country.id}
-              />
-            );
-          })}
+                />
+                );
+              })}
         </Cartas>
       </CountryContainer>
     </Container>

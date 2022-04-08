@@ -1,14 +1,17 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-import { Container, MenuItemLink } from './LandingStyle'
+import { Container, Link, LogoContainer } from './LandingStyle'
+import Logo from "./../../images/mundial.gif"
+
 
 export default function Landing() {
   return (
       <Container>
-        <div>La mejor Landing del Planeta Paaa</div>
-        <MenuItemLink>
-          <NavLink to={'/countries'}> GoCountries</NavLink>
-        </MenuItemLink>
+        <LogoContainer>
+                    <img src={Logo} alt={'h'}/>
+                    <p>Tourist</p>
+                    <p>World</p>
+                </LogoContainer>
+        <Link to={'/countries'}>Bienvenido</Link>
       </Container>
       )
 }

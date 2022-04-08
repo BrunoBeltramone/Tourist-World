@@ -63,6 +63,10 @@ export const TheFront = styled.div`
     padding: 10px;
     border-radius: 20px;
     color: ${colors.PrimaryOrange};
+    text-shadow: 3px 3px 3px black;
+    -webkit-text-stroke: 0.5px ${colors.SecondBlue};
+
+
 
 
     img {
@@ -79,11 +83,23 @@ export const TheBack = styled.div`
     backface-visibility: hidden;
     transform: rotateY(180deg);
     background-color: ${colors.SecondBlueCard};
-    font-size: 2rem;
+    font-size: 1.9rem;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
     padding: 10px;
     border-radius: 20px;
     color: ${colors.PrimaryOrange};
+
+    p{
+        text-shadow: 2px 2px 2px black;
+    }
+
+
+    h2{
+        text-shadow: 3px 3px 3px black;
+        -webkit-text-stroke: 0.5px ${colors.SecondBlue};
+    }
+
 `
 
 export const Texto = styled.p`
@@ -108,6 +124,7 @@ export const Boton = styled.button`
         background-color: ${colors.PrimaryOrange};
         font-size: 1.3rem;
         transition: 0.5s all ease;
+        font-weight: bold;
     }
 `
 

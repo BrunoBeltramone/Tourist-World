@@ -1,8 +1,7 @@
 ------------------------------------------------ P O R  H A C E R --------------------------------------------------------------
 
 2- Llenar la base de datos apenas de Cree el servidor.
-3- Tener una plantilla de colores. Asi cuando quiera modificar los colores lo hago de forma rapida y mantengo del mismo color los elementos
-
+4- Fondo de varias imagenes en la landing
 
 
 
@@ -11,4 +10,13 @@
 
 1- Cada vez que ingreso a get /countries, hago un requerimineto de la api con fillDataBase (lo cual consume recursos). 
    El objetivo seria verificar si la base de datos tiene contenido -> si es asi no se ejecuta el fillDataBase y ahorro recursos.
+3- Tener una plantilla de colores. Asi cuando quiera modificar los colores lo hago de forma rapida y mantengo del mismo color los elementos
+
+
+------------------------------------------------ R E Q U S I T O S --------------------------------------------------------------
+
+1- Filtrar por poblacion.
+2- Mostrar actividades relacionadas en la pagina CountryDetail.
+3- posibilidad de agregar varios paises en simultaneo al crear una avtividad
+
 

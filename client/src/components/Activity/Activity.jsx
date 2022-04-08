@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Formulario } from "./Activity_Style";
+import { Container, Formulario, Input, Select } from "./Activity_Style";
 
 export default function Activity() {
   const [input, setInput] = React.useState({
@@ -40,8 +40,9 @@ export default function Activity() {
       <Formulario onSubmit={(e) => handleSubmit(e)}>
         <h1> Activity </h1>
         <br />
+        <br />
         <label> Nombre </label>
-        <input
+        <Input
           type={"text"}
           name={"nombre"}
           value={input.nombre}
@@ -51,18 +52,18 @@ export default function Activity() {
         <br />
         <label> Dificultad </label>
         
-        <select type={"text"} name={"dificultad"} value={input.dificultad} onChange={(e) => handleChange(e)}>
+        <Select type={"text"} name={"dificultad"} value={input.dificultad} onChange={(e) => handleChange(e)}>
             <option> Seleccione una Dificultad </option>
             <option> 1 </option>
             <option> 2 </option>
             <option> 3 </option>
             <option> 4 </option>
             <option> 5 </option>
-        </select>
+        </Select>
         <br />
         <br />
         <label> Duracion </label>
-        <input
+        <Input
           type={"text"}
           name={"duracion"}
           value={input.duracion}
@@ -77,13 +78,13 @@ export default function Activity() {
           value={input.temporada}
           onChange={(e) => handleChange(e)}
         /> */}
-        <select type={"text"} name={"temporada"} value={input.temporada} onChange={(e) => handleChange(e)}>
+        <Select type={"text"} name={"temporada"} value={input.temporada} onChange={(e) => handleChange(e)}>
             <option> Seleccione una Temporada </option>
             <option> Invierno </option>
             <option> Primavera </option>
             <option> Otoño </option>
             <option> Verano </option>
-        </select>
+        </Select>
         <br />
         <br />
         <button type="submit"> Create </button>

@@ -41,7 +41,8 @@
    img {
       width:50px;
       height:50px;
-      margin-right: 20px;
+      margin-right: 10px;
+      border-radius: 50px;
       
    }
  `;
@@ -74,4 +75,5 @@
         font-size: 1.05rem;
         transition: 0.5s all ease;
     }
+
  `;
