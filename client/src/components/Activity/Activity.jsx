@@ -12,7 +12,7 @@ export default function Activity() {
     dispatch(getAllCountries())
   },[dispatch])
 
-  const [input, setInput] = React.useState({
+  const [input, setInput] = useState({
     nombre: "",
     dificultad: "",
     duracion: "",
@@ -30,10 +30,14 @@ export default function Activity() {
 
   let handleSelect = (e) => {
     e.preventDefault();
-    setInput({
-      ...input,
-      paises:[...input.paises, e.target.value] 
-    });
+    if(input.paises.includes(e.target.value)){
+      return
+    }else{   
+      setInput({
+        ...input,
+        paises:[...input.paises, e.target.value] 
+      });
+    }
   }
 
   //TENGO QUE VER COMO DESPACHAR LA ACCION Y GUARDARLA EN LA BASE DE DATOS
@@ -93,12 +97,6 @@ export default function Activity() {
         <br />
         <br />
         <label> Temporada </label>
-        {/* <input
-          type={"text"}
-          name={"temporada"}
-          value={input.temporada}
-          onChange={(e) => handleChange(e)}
-        /> */}
         <Select type={"text"} name={"temporada"} value={input.temporada} onChange={(e) => handleChange(e)}>
             <option> Seleccione una Temporada </option>
             <option> Invierno </option>
@@ -116,6 +114,7 @@ export default function Activity() {
             ))
           }
         </Select>
+        <ul><li>{input.paises.map(pais => pais + ", ")}</li></ul>
         <br />
         <br />
         <button type="submit"> Create </button>

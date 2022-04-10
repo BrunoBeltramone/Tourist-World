@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "./../../images/mundial.gif"
-import { Container, LogoContainer, Menu, MenuItem, MenuItemLink, Wrapper } from "./NavBar_Style";
+import { Container, LogoContainer, Menu, MenuItemLink, Wrapper } from "./NavBar_Style";
 
 
 export default function NavBar() {

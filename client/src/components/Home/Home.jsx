@@ -8,7 +8,6 @@ import {
   FlechaPaginadoIzq,
   FlechaPaginadoDer,
   CurrentPage,
-  ContainerPaginado,
 } from "./Home_Style";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -43,6 +42,7 @@ export default function Home() {
   
   var handleFilterByName = (e) => {
     e.preventDefault();
+    setCurrentPage(1);
     dispatch(filterCountriesByName(e.target.value));
     setOrder(`Ordenado ${e.target.value}`);
   };
