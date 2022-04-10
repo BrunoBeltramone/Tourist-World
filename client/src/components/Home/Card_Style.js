@@ -2,40 +2,12 @@ import { NavLink } from "react-router-dom"
 import styled from "styled-components"
 import { colors } from "../../theme"
 
-export const Carta = styled.div`
-    border-radius: 20px;
-    border: 3px solid ${colors.SecondBlueCard};
-    display: flex;
-    flex-direction: column;
-    width: 550px;
-    height: 470px;
-    margin: 25px;
-    padding: 5px;
-    font-size: 1.7rem;
-    justify-content: space-between;
-    color: ${colors.White};
-    background-color: ${colors.SecondBlueCard};
-    font-weight: bold;
-
-    img {
-        width: 100%;
-        height: 350px;
-        border-radius: 20px;
-    }
-
-    h2 {
-        align-self: flex;
-    }
-`
-//----------------------------------------------------------------------
-
 export const MainContainer = styled.div`
     position: relative;
-    width: 560px;
-    height: 510px;
-    margin: 50px;
-
-    /* background-color: ${colors.SecondBlueCard}; */
+    width: 420px;
+    height: 370px;
+    margin: 20px;
+    margin-bottom: 80px;
 `
 
 export const TheCard = styled.div`
@@ -44,12 +16,10 @@ export const TheCard = styled.div`
     height: 100%;
     transform-style: preserve-3d;
     transition: all 0.5s ease-in;
-    
 
     &:hover{
         transform: rotateY(180deg);
     }
-
 `
 
 export const TheFront = styled.div`
@@ -58,21 +28,15 @@ export const TheFront = styled.div`
     height: 100%;
     backface-visibility: hidden;
     background-color: ${colors.SecondBlueCard};
-    font-size: 2rem;
+    font-size: 1.4rem;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     padding: 10px;
-    border-radius: 20px;
-    color: ${colors.PrimaryOrange};
-    text-shadow: 3px 3px 3px black;
-    -webkit-text-stroke: 0.5px ${colors.SecondBlue};
-
-
-
+    color: ${colors.Primary};
+    text-shadow: 4px 4px 4px black;
 
     img {
         width: 100%;
-        height: 350px;
-        border-radius: 20px;
+        height: 260px;
     }
 `
 
@@ -83,68 +47,49 @@ export const TheBack = styled.div`
     backface-visibility: hidden;
     transform: rotateY(180deg);
     background-color: ${colors.SecondBlueCard};
-    font-size: 1.9rem;
+    font-size: 1.5rem;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
-    padding: 10px;
-    border-radius: 20px;
-    color: ${colors.PrimaryOrange};
+    color: ${colors.Primary};
+    align-content: space-between;
 
     p{
-        text-shadow: 2px 2px 2px black;
+        text-shadow: 4px 4px 4px black;
     }
-
 
     h2{
-        text-shadow: 3px 3px 3px black;
-        -webkit-text-stroke: 0.5px ${colors.SecondBlue};
+        padding-top: 10px;
+        text-shadow: 4px 4px 4px black;
     }
-
 `
-
 export const Texto = styled.p`
     color: ${colors.White};
     text-align: left;
-    padding-left: 70px;
-    font-size: 2rem;
-    margin: 10px;
-`
-
-export const Boton = styled.button`
-    background-color: ${colors.SecondBlue};
-    color: ${colors.PrimaryOrange};
-    width: 13rem;
-    height: 2.2rem;
-    font-size: 1.2rem;
-    border-radius: 20px;
-    font-weight: bold;
-
-    &:hover{
-        color: ${colors.SecondBlue};
-        background-color: ${colors.PrimaryOrange};
-        font-size: 1.3rem;
-        transition: 0.5s all ease;
-        font-weight: bold;
-    }
+    margin-bottom: 20px;
+    padding-left: 30px;
+    font-size: 1.7rem;
 `
 
 export const Detail = styled(NavLink)`
-    text-decoration: none;
-    border-radius: 20px;
-    
-    background-color: ${colors.SecondBlue};
-    color: ${colors.PrimaryOrange};
-    font-family: sans-serif;
-    font-size: 1.3rem;
+    display: flex;
+    text-decoration: none;    
+    background-color: ${colors.Primary};
+    color: ${colors.SecondBlue};
+    width: 185px;
+    font-size: 1.2rem;
     font-weight: bold;
-    padding: 12px;
+    margin-top: 20px;
+    justify-content: center;
+    margin-left: 120px;
+    padding: 7px;
     cursor: pointer;
     transition: 0.5s all ease;
 
     &:hover{
-        color: ${colors.SecondBlue};
-        background-color: ${colors.PrimaryOrange};
-        font-size: 1.4rem;
+        color: ${colors.Primary};
+        background-color: ${colors.Orange};
+        font-size: 1.3rem;
         transition: 0.5s all ease;
+        text-shadow: 0px 0px 5px black;
     }
 `

@@ -39,21 +39,22 @@ export const Link = styled(NavLink)`
     /* color: ${colors.PrimaryOrange}; */
     color: ${colors.SecondBlue};
     width: 250px;
-    height: 70px;
+    height: 80px;
     font-size: 2.5rem;
     font-weight: bold;
     align-items: center;
     /* background-color: ${colors.SecondBlueForm}; */
     border-radius: 30px;
-    background-color: ${colors.PrimaryOrange};
+    background-color: ${colors.Primary};
     border: 3px solid ${colors.SecondBlue};
+    /* padding: 100px; */
 
     &:hover{
        font-size: 2.7rem;
        transition: 0.5s all ease;
        background-color: ${colors.SecondBlueForm};
-       color: ${colors.PrimaryOrange};
-       border: 3px solid ${colors.PrimaryOrange};
+       color: ${colors.Orange};
+       border: 3px solid ${colors.Orange};
    };
 `
 
@@ -66,7 +67,7 @@ export const LogoContainer = styled.div`
    background-color: ${colors.SecondBlueForm};
    padding: 1rem;
    border-radius: 30px;
-   border: 4px solid ${colors.PrimaryOrange};
+   border: 5px solid ${colors.Orange};
 
    p {
        &:nth-child(2) {
@@ -76,7 +77,7 @@ export const LogoContainer = styled.div`
        }
        &:nth-child(3){
            font-size: 7rem;
-           color: ${colors.PrimaryOrange};
+           color: ${colors.Orange};
        }
    }
 

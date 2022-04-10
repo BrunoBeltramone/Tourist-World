@@ -31,7 +31,15 @@ export function getCountryByName(nombre){
     }
     catch(err){
       console.log(err)
+      return alert("No se ha encontrado un Pais con ese Nombre")
     }
+  }
+}
+
+export function filterCountriesByPoblation(payload){
+  return{
+    type: "FILTER_BY_POBLATION",
+    payload
   }
 }
 
@@ -48,4 +56,12 @@ export function filterCountriesByName(payload) {
       type: "FILTER_COUNTRIES_BY_NAME",
       payload,
     };
+}
+export function postActivity(payload){
+  return async function(dispatch){
+      var resp = await axios.post(`http://localhost:3001/activity`, payload);
+      console.log(resp);
+      return resp;
+  }
+
 }

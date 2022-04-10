@@ -3,8 +3,8 @@ import { colors } from "../../theme";
 
 export const ContainerGrande = styled.div`
   width: 100vw;
-  height: 95vh;
-  background-image: url("https://i.pinimg.com/originals/07/e1/05/07e1059911d72005a91f49bebedcd243.jpg");
+  height: 100vh;
+  background-image: url("https://d2r9epyceweg5n.cloudfront.net/stores/001/135/090/products/125x89-mapa-1-sepia1-a3ba610dc361b57e7515886475452588-1024-1024.jpg");
   background-size: 100% 100%;
   padding-left: 15vw;
   padding-top: 5vh;
@@ -19,9 +19,9 @@ export const Container = styled.div`
   height: 50vh;
   /* text-align: center; */
   background-color: ${colors.SecondBlueForm};
-  color: ${colors.PrimaryOrange};
-  border: 5px solid ${colors.PrimaryOrange};
-  border-radius: 30px;
+  color: ${colors.Primary};
+  border: 5px solid ${colors.Orange};
+  /* border-radius: 30px; */
 `;
 
 export const Img = styled.div`
@@ -37,7 +37,7 @@ export const Img = styled.div`
     padding: 10px;
     width: 100%;
     height: 100%;
-    border-radius: 30px;
+    /* border-radius: 30px; */
 
   }
 `;
@@ -62,6 +62,6 @@ export const Texto = styled.p`
   &:nth-child(1) {
     font-size: 4rem;
     font-weight: bold;
-    color: ${colors.PrimaryOrange};
+    color: ${colors.Primary};
   }
     `;

@@ -11,10 +11,10 @@ export default function Paginado({countries, countriesPerPage, paginado}){
 
     return(
         <Container>
-            <Menu>
+            <Menu >
                 {
-                    pageNumbers && pageNumbers.map( number =>(
-                        <MenuItemLink key={number} onClick={() => paginado(number)} >{number}</MenuItemLink>
+                    pageNumbers.length>1 && pageNumbers.map( PageNumber =>(
+                        <MenuItemLink key={PageNumber} onClick={() => paginado(PageNumber)} >{PageNumber}</MenuItemLink>
                     ))
                 }
             </Menu>

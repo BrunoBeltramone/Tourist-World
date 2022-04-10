@@ -10,7 +10,8 @@ const getApiInfo = async () => {
     const apiInfo = await apiUrl.data.map( p => {
         return {
             id: p.cca3,
-            nombre: p.name.common,
+            nombre: p.translations.spa.common,
+            name: p.name.common,
             imagen: p.flags.png,
             continente: p.region,
             capital: p.capital,
@@ -34,6 +35,7 @@ const fillDb = async () => {
                 where:{
                     id: element.id,
                     nombre: element.nombre,
+                    name: element.name,
                     imagen: element.imagen,
                     continente: element.continente,
                     capital: element.capital || [ 'No tiene Capital' ],
@@ -70,7 +72,7 @@ router.get('/', async (req, res)=> {
     await fillDb()
     let Totalcountries = await getDbInfo();
     if(name){
-        let countryName = await Totalcountries.filter( p => p.nombre.toLowerCase().includes(name.toLowerCase()))
+        let countryName = await Totalcountries.filter( p => p.nombre.toLowerCase().includes(name.toLowerCase()) || p.name.toLowerCase().includes(name.toLowerCase()))
         if (countryName.length > 0){
             return res.status(200).send(countryName)
         }else{

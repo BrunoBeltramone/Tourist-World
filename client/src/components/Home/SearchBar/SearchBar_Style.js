@@ -16,9 +16,9 @@ export const Input = styled.input`
     height: 3rem;
     color: black;
     background-color: ${colors.PrimaryOrange}; 
-    border: 2.5px solid black;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+    border: 2.5px solid ${colors.SecondBlue};
+    /* border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px; */
     font-weight: bold;
 
     &::placeholder {
@@ -30,11 +30,11 @@ export const Boton = styled.button`
     width: 6rem;
     height: 3rem;
     background-color: ${colors.SecondBlue};
-    color: ${colors.PrimaryOrange};
-    border: 2.5px solid ${colors.PrimaryOrange};
+    color: ${colors.Primary};
+    border: 2.5px solid ${colors.SecondBlue};
     font-size: 1.2rem;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    /* border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px; */
     padding: 10px;
     cursor: pointer;
 `

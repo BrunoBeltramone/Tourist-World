@@ -11,7 +11,6 @@ export default function SearchBar(){
     const handleOnChange = (e) => {
       e.preventDefault();
       setNombre(e.target.value)
-      console.log(nombre)
     }
 
     const handleOnSubmit = (e) => {
@@ -22,7 +21,7 @@ export default function SearchBar(){
 
   return (
     <Container >
-      <Input type='text' value={nombre} placeholder='Buscar...' onChange={(e) => handleOnChange(e)}/>
+      <Input type='text' value={nombre} placeholder='Find Contries ...' onChange={(e) => handleOnChange(e)}/>
       <Boton type='submit' onClick={(e) => handleOnSubmit(e)}> Search </Boton>
     </Container>
   )

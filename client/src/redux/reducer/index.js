@@ -18,11 +18,22 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         country: action.payload,
       };
+
     case "GET_COUNTRY_BY_NAME":
       return {
         ...state,
         countries: action.payload,
       };
+    case "POST_CHARACTER":
+      return state
+
+    case "FILTER_BY_POBLATION":
+      var filteredPoblation = action.payload === 'desc'? state.countries.sort(function(a, b){return a.poblacion-b.poblacion}) : action.payload === 'asc'? state.countries.sort(function(a, b){return b.poblacion-a.poblacion}) : state.countries
+      return{
+        ...state,
+        countries: filteredPoblation
+      }
+
     case "FILTER_BY_CONTINENT":
       var filteredCountries =
         action.payload === "All"
@@ -32,6 +43,7 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         countries: filteredCountries,
       };
+
     case "FILTER_COUNTRIES_BY_NAME":
       var FilteredCountries =
         action.payload === "asc"
@@ -45,7 +57,7 @@ export default function rootReducer(state = initialState, action) {
               // a must be equal to b
               return 0;
             })
-          : state.countries.sort(function (a, b) {
+          : action.payload === "desc" ? state.countries.sort(function (a, b) {
               if (a.nombre.toLowerCase() < b.nombre.toLowerCase()) {
                 return 1;
               }
@@ -54,11 +66,12 @@ export default function rootReducer(state = initialState, action) {
               }
               // a must be equal to b
               return 0;
-            });
+            }): state.countries;
       return {
         ...state,
         countries: FilteredCountries,
       };
+
     default:
       return state;
   }

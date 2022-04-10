@@ -8,23 +8,14 @@ export default function NavBar() {
         <Container>
             <Wrapper>
                 <LogoContainer>
-                    <img src={Logo} alt={'h'}/>
+                    <img src={Logo} alt={'Nt'}/>
                     <p>Tourist</p>
                     <p>World</p>
                 </LogoContainer>
-
                 <Menu>
-                    <MenuItem>
-                        <MenuItemLink to={'/countries'}>Home</MenuItemLink>
-                    </MenuItem>
-
-                    <MenuItem>
-                        <MenuItemLink to={'/activity'}>Activity</MenuItemLink>
-                    </MenuItem>
-
-                    <MenuItem>
-                        <MenuItemLink to={'/about'}>About</MenuItemLink>
-                    </MenuItem>
+                    <MenuItemLink to={'/countries'}>Home</MenuItemLink>
+                    <MenuItemLink to={'/activity'}>Activity</MenuItemLink>
+                    <MenuItemLink to={'/about'}>About</MenuItemLink>
                 </Menu>
             </Wrapper>
         </Container>

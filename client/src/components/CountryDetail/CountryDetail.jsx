@@ -37,7 +37,7 @@ export default function CountryDetail() {
           <Texto>Continente: {Country.continente}</Texto>
           <Texto>Subregion: {Country.subregion}</Texto>
           <Texto>Capital: {Country.capital}</Texto>
-          <Texto>Area: {Country.area} km^2</Texto>
+          <Texto>Area: {Country.area} km2</Texto>
           <Texto>Poblacion: {Country.poblacion}</Texto>
         </Informacion>
         {/* <Card

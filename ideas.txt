@@ -15,7 +15,6 @@
 
 ------------------------------------------------ R E Q U S I T O S --------------------------------------------------------------
 
-1- Filtrar por poblacion.
 2- Mostrar actividades relacionadas en la pagina CountryDetail.
 3- posibilidad de agregar varios paises en simultaneo al crear una avtividad
 

@@ -1,32 +1,53 @@
-import React from "react";
-import { Container, Formulario, Input, Select } from "./Activity_Style";
+import React, {useState, useEffect} from "react";
+import {useDispatch, useSelector} from "react-redux"
+import { Container, Formulario, Input, Label, Select } from "./Activity_Style";
+import { getAllCountries, postActivity } from "../../redux/actions";
 
 export default function Activity() {
+
+  var dispatch = useDispatch()
+  var paises = useSelector(state => state.allCountries)
+
+  useEffect(() => {
+    dispatch(getAllCountries())
+  },[dispatch])
+
   const [input, setInput] = React.useState({
     nombre: "",
     dificultad: "",
     duracion: "",
     temporada: "",
+    paises: [],
   });
 
   let handleChange = (e) => {
     e.preventDefault();
-    setInput((prevState) => ({
-      ...prevState,
+    setInput({
+      ...input,
       [e.target.name]: e.target.value,
-    }));
+    });
   };
+
+  let handleSelect = (e) => {
+    e.preventDefault();
+    setInput({
+      ...input,
+      paises:[...input.paises, e.target.value] 
+    });
+  }
 
   //TENGO QUE VER COMO DESPACHAR LA ACCION Y GUARDARLA EN LA BASE DE DATOS
   let handleSubmit = (e) => {
     e.preventDefault();
-    console.log(input)
+    dispatch(postActivity(input));
     setInput({
       nombre: "",
       dificultad: "",
       duracion: "",
       temporada: "",
+      paises:[],
     });
+    return alert("Actividad creada")
   };
 
   return (
@@ -41,7 +62,7 @@ export default function Activity() {
         <h1> Activity </h1>
         <br />
         <br />
-        <label> Nombre </label>
+        <Label> Nombre </Label>
         <Input
           type={"text"}
           name={"nombre"}
@@ -50,7 +71,7 @@ export default function Activity() {
         />
         <br />
         <br />
-        <label> Dificultad </label>
+        <Label> Dificultad </Label>
         
         <Select type={"text"} name={"dificultad"} value={input.dificultad} onChange={(e) => handleChange(e)}>
             <option> Seleccione una Dificultad </option>
@@ -84,6 +105,16 @@ export default function Activity() {
             <option> Primavera </option>
             <option> Otoño </option>
             <option> Verano </option>
+        </Select>
+        <br />
+        <br />
+        <label> Paises </label>
+        <Select onChange={(e) => handleSelect(e)}>
+          {
+            paises && paises.map((p) => (
+              <option value={p.nombre} key={p.id}>{p.nombre}</option>
+            ))
+          }
         </Select>
         <br />
         <br />
