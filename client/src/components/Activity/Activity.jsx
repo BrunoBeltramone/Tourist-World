@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux"
-import { Container, Formulario, Input, Label, Select } from "./Activity_Style";
+import { Container, Formulario, Input, Label, Select, Ul } from "./Activity_Style";
 import { getAllCountries, postActivity } from "../../redux/actions";
 
 export default function Activity() {
@@ -40,7 +40,6 @@ export default function Activity() {
     }
   }
 
-  //TENGO QUE VER COMO DESPACHAR LA ACCION Y GUARDARLA EN LA BASE DE DATOS
   let handleSubmit = (e) => {
     e.preventDefault();
     dispatch(postActivity(input));
@@ -54,19 +53,21 @@ export default function Activity() {
     return alert("Actividad creada")
   };
 
+  let handleDelete = (e) => {
+    e.preventDefault();
+    setInput({
+      ...input,
+      paises:[...input.paises.filter(!e.target.value)] 
+    });
+  }
+
   return (
     <Container>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
       <Formulario onSubmit={(e) => handleSubmit(e)}>
         <h1> Activity </h1>
         <br />
         <br />
-        <Label> Nombre </Label>
+        <Label> Nombre Actividad </Label>
         <Input
           type={"text"}
           name={"nombre"}
@@ -114,10 +115,22 @@ export default function Activity() {
             ))
           }
         </Select>
-        <ul><li>{input.paises.map(pais => pais + ", ")}</li></ul>
+        {/* <ul><li>{input.paises.map(pais => pais + ", ")}</li></ul> */}
+        <Ul>
+          {
+            input.paises.map(pais => {
+              return(
+                <li key={pais}  onClick={(e) => handleDelete(e)}>
+                  <p type={"text"} name='paises' value={input.paises} >{pais}</p>
+                  <button type="click">x</button>
+                </li>
+              )
+            }
+          )}
+        </Ul>
         <br />
         <br />
-        <button type="submit"> Create </button>
+        <button > Create </button>
       </Formulario>
     </Container>
   );

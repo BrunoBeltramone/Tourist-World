@@ -8,7 +8,7 @@ export function getAllCountries() {
       payload: info.data,
     });
   };
-}
+};
 
 export function getCountryById(id) {
   return async function (dispatch) {

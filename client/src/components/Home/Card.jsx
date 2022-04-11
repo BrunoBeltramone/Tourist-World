@@ -3,16 +3,6 @@ import { MainContainer, TheBack, TheCard, TheFront, Texto, Detail } from './Card
 
 export const Card = ({nombre, id, capital, subregion, area, poblacion, imagen, continente}) => {
 
-  // return (
-  //   <Carta>
-  //       <img src={imagen} alt="NI" />
-  //       <h2>{nombre}</h2>
-  //   </Carta>
-  // )
-
-  //---------------------------------------------------------------------------------------------------
-
-
   return (
     <MainContainer> 
       <TheCard>

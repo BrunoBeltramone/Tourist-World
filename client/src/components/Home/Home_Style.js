@@ -4,7 +4,8 @@ import { colors } from "../../theme";
 export const Container = styled.div`
     display: block;
     height: 100vh;
-    background-image: url('https://a.cdn-hotels.com/gdcs/production159/d204/01ae3fa0-c55c-11e8-9739-0242ac110006.jpg');
+    background-image: url('https://c.pxhere.com/photos/30/f4/blue_sky_sky_of_brigadier_plane_clouds-1164469.jpg!d');
+    /* background-image: url('https://cdn.pixabay.com/photo/2012/02/22/19/28/africa-15428_960_720.jpg'); */
     background-size: 100% 100%;
     background-attachment: fixed;
 `;
@@ -75,8 +76,10 @@ export const CurrentPage = styled.div`
     color: ${colors.SecondBlue};
     font-size: 2rem;
     font-weight: bold;
-    margin-left: 30px;
+    margin-left: 250px;
     margin-bottom: -50px;
 `
 
 // https://s1.1zoom.me/b5946/142/Jiuzhaigou_park_China_Parks_Mountains_Autumn_Lake_532031_2560x1440.jp
+// https://a.cdn-hotels.com/gdcs/production159/d204/01ae3fa0-c55c-11e8-9739-0242ac110006.jpg
+// https://cdn.pixabay.com/photo/2018/05/11/15/49/globalisation-3390877_960_720.jpg

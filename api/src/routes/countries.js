@@ -42,7 +42,8 @@ const fillDb = async () => {
                     subregion: element.subregion || null,
                     area: element.area,
                     poblacion: element.poblacion
-                }
+                }, 
+                include: Activity
             })
         });
     }
@@ -60,6 +61,7 @@ const getDbInfo = async () => {
         }
     })
 }
+
 // Opcional -> Hace lo mismo que getDbInfo lo cual requiere mas, pero vuelve el codigo un poco mas entendible.
 // const getAllCountries = async () => {
 //     const dbInfo = await getDbInfo();
@@ -86,8 +88,10 @@ router.get('/', async (req, res)=> {
 router.get('/:id', async (req, res) => {
     let { id } = req.params
     if (id){
-        await fillDb()
-        const countryById = await Country.findByPk(id.toUpperCase());
+        await fillDb();
+        const countryById = await Country.findByPk(id.toUpperCase(),{
+            include : Activity
+        });
         if(countryById){
             return res.send(countryById)
         }else{

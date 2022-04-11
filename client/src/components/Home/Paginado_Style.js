@@ -8,7 +8,7 @@ export const Container = styled.div`
    margin: auto;
    width: min-content;
    height: 50px;
-   background-color: ${colors.SecondBlue};
+   /* background-color: ${colors.SecondBlue}; */
 `;
 
 export const Menu = styled.ul`
@@ -26,6 +26,10 @@ export const MenuItemLink = styled.a`
    justify-content: center;
    align-items: center;
    color: ${colors.Primary};
+   background-color: ${colors.SecondBlue};
+
+   border: 1.5px solid ${colors.Primary};
+   margin: 3px;
    font-size: 1.4rem;
    font-weight: bold;
    cursor: pointer;

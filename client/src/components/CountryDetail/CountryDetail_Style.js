@@ -4,7 +4,7 @@ import { colors } from "../../theme";
 export const ContainerGrande = styled.div`
   width: 100vw;
   height: 100vh;
-  background-image: url("https://d2r9epyceweg5n.cloudfront.net/stores/001/135/090/products/125x89-mapa-1-sepia1-a3ba610dc361b57e7515886475452588-1024-1024.jpg");
+  background-image: url("https://cdn.pixabay.com/photo/2012/02/22/19/28/africa-15428_960_720.jpg");
   background-size: 100% 100%;
   padding-left: 15vw;
   padding-top: 5vh;
@@ -13,15 +13,11 @@ export const ContainerGrande = styled.div`
 
 export const Container = styled.div`
   display: flex;
-  /* justify-content: center; */
-  /* text-align: center; */
   width: 70vw;
   height: 50vh;
-  /* text-align: center; */
   background-color: ${colors.SecondBlueForm};
   color: ${colors.Primary};
-  border: 5px solid ${colors.Orange};
-  /* border-radius: 30px; */
+  border: 3px solid ${colors.Orange};
 `;
 
 export const Img = styled.div`
@@ -60,8 +56,15 @@ export const Texto = styled.p`
   padding-left: 50px;
 
   &:nth-child(1) {
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: bold;
     color: ${colors.Primary};
+    padding-bottom: 30px;
+
   }
     `;
+
+export const ActivitiesContainer = styled.div`
+    display: flex;
+    margin: auto;
+`

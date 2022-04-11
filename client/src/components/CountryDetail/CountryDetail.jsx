@@ -2,7 +2,9 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getCountryById } from "../../redux/actions/index";
+import { Activity } from "./Activity/Activity";
 import {
+  ActivitiesContainer,
   Container,
   ContainerGrande,
   Img,
@@ -21,15 +23,15 @@ export default function CountryDetail() {
 
   return (
     <ContainerGrande>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <Container>
         <Img>
-          <img src={Country.imagen} alt={"Error"}/>
+          <img src={Country.imagen} alt={"Error"} />
         </Img>
         <Informacion>
           <Texto>{Country.nombre}</Texto>
@@ -40,18 +42,20 @@ export default function CountryDetail() {
           <Texto>Area: {Country.area} km2</Texto>
           <Texto>Poblacion: {Country.poblacion}</Texto>
         </Informacion>
-        {/* <Card
-                nombre={Country.nombre}
-                id={Country.id}
-                capital={Country.capital}
-                subregion={Country.subregion}
-                area={Country.area}
-                poblacion={Country.poblacion}
-                continente={Country.continente}
-                imagen={Country.imagen}
-                key={Country.id}
-              /> */}
       </Container>
+      <ActivitiesContainer>
+        {Country.Activities?.map((act) => {
+          return (
+            <Activity
+              nombre={act.nombre}
+              dificultad={act.dificultad}
+              duracion={act.duracion}
+              temporada={act.temporada}
+              key={act.nombre + act.duracion}
+            />
+          );
+        })}
+      </ActivitiesContainer>
     </ContainerGrande>
   );
 }
