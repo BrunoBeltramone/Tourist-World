@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 import { colors } from '../../theme';
 
 export const Container = styled.div`
@@ -65,8 +65,9 @@ export const Input = styled.input`
         background-color: ${colors.Primary}; 
         border: 3px solid ${colors.SecondBlue};
         font-weight: bold;
-        text-align: center;        
-        `
+        text-align: center;
+
+`
 
 export const Select = styled.select`
         width: 25rem;
@@ -110,4 +111,17 @@ export const Ul = styled.ul`
         width: 30px;
         height: 30px;
     }
+`
+
+export const Error = styled.p`
+    color: ${colors.Error};
+    width: 70%;
+    margin: auto;
+    /* background-color: red; */
+    margin-top: -30px;
+    margin-bottom: 30px;
+    font-size:  27px;
+    text-shadow: 1.5px 1.5px 1.5px black;
+
+    /* font-weight: bold; */
 `

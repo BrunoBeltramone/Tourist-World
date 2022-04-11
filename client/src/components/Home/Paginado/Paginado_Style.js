@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../../theme';
+import { colors } from '../../../theme';
 
 export const Container = styled.div`
    display: flex;
@@ -28,8 +28,8 @@ export const MenuItemLink = styled.a`
    color: ${colors.Primary};
    background-color: ${colors.SecondBlue};
 
-   border: 1.5px solid ${colors.Primary};
-   margin: 3px;
+   border: 2px solid ${colors.Orange};
+   margin: 2.5px;
    font-size: 1.4rem;
    font-weight: bold;
    cursor: pointer;
@@ -37,7 +37,7 @@ export const MenuItemLink = styled.a`
 
    &:hover{
        color: ${colors.SecondBlue};
-       background-color: ${colors.Primary};
+       background-color: ${colors.Orange};
        font-size: 1.56rem;
        transition: 0.5s all ease;
    };

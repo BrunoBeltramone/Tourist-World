@@ -1,5 +1,5 @@
 import React from "react";
-import { ContainerActivities, MainContainer, Texto, TheActivity, TheBack, TheFront, Title } from "./Activity_Style";
+import { MainContainer, Texto, TheActivity, TheBack, TheFront, Title } from "./Activity_Style";
 
 export const Activity = ({nombre, dificultad, duracion, temporada}) => {
 

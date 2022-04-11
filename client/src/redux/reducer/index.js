@@ -2,6 +2,7 @@ const initialState = {
   countries: [],
   allCountries: [],
   country: {},
+  activities: []
 };
 
 export default function rootReducer(state = initialState, action) {
@@ -24,8 +25,26 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         countries: action.payload,
       };
-    case "POST_CHARACTER":
-      return state
+
+    case "POST_ACTIVITY":
+      return state;
+    
+    case "GET_ACTIVITIES":
+      return {
+        ...state,
+        activities: action.payload
+      }
+    
+    case "FILTER_COUNTRIES_BY_ACTIVITY":
+      console.log(action.payload)
+      // let act = state.countries.map( p => p.Activities.map( c => c.nombre.includes(action.payload)))
+      let paises = []
+      let act = state.allCountries.map( p => p.Activities?.map(c => c.nombre === (action.payload) ? paises.push(p) : console.log("Hola")))
+      console.log(paises)
+      return{
+        ...state,
+        countries: paises
+      }
 
     case "FILTER_BY_POBLATION":
       var filteredPoblation = action.payload === 'desc'? state.countries.sort(function(a, b){return a.poblacion-b.poblacion}) : action.payload === 'asc'? state.countries.sort(function(a, b){return b.poblacion-a.poblacion}) : state.countries

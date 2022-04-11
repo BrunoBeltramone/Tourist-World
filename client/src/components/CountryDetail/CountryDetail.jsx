@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getCountryById } from "../../redux/actions/index";
-import { Activity } from "./Activity/Activity";
+import { Activity } from "./Activities/Activity";
 import {
   ActivitiesContainer,
   Container,

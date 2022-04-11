@@ -62,6 +62,22 @@ export function postActivity(payload){
       var resp = await axios.post(`http://localhost:3001/activity`, payload);
       console.log(resp);
       return resp;
-  }
+  };
+}
 
+export function GetActivities(){
+  return async function (dispatch) {
+    var info = await axios.get(`http://localhost:3001/activity`);
+    return dispatch({
+      type: "GET_ACTIVITIES",
+      payload: info.data
+    });
+  };
+};
+
+export function filterCountriesByActivity(payload){
+  return{
+    type: "FILTER_COUNTRIES_BY_ACTIVITY",
+    payload,
+  };
 }

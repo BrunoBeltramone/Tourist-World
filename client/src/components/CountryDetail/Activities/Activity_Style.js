@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom"
 import styled from "styled-components"
 import { colors } from "../../../theme"
 
@@ -60,7 +59,7 @@ export const TheBack = styled.div`
          margin-bottom: 15px;
          padding-bottom: 15px;
          color: ${colors.Orange};
-         justify-content: center;
+         justify-content: flex-start;
          border-bottom: 2px solid white;
 `
 

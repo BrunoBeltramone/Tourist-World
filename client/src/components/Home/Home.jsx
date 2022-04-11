@@ -15,14 +15,18 @@ import {
   filterCountriesByContinent,
   filterCountriesByName,
   filterCountriesByPoblation,
+  filterCountriesByActivity,
+  GetActivities,
 } from "../../redux/actions";
-import { Card } from "./Card";
+import { Card } from "./Card/Card";
 import SearchBar from "./SearchBar/SearchBar";
-import Paginado from "./Paginado";
+import Paginado from "./Paginado/Paginado";
 
 export default function Home() {
   const dispatch = useDispatch();
   const Countries = useSelector((state) => state.countries);
+  const Activities = useSelector((state) => state.activities)
+
   const [currentPage, setCurrentPage] = useState(1);
   const [order, setOrder] = useState("");
   const [countriesPerPage, setcountriesPerPage] = useState(10);
@@ -35,9 +39,9 @@ export default function Home() {
   };
 
   useEffect(() => {
-    dispatch(getAllCountries());
+    dispatch(getAllCountries())
+    dispatch(GetActivities());
   }, [dispatch]);
-
 
   
   var handleFilterByName = (e) => {
@@ -51,6 +55,13 @@ export default function Home() {
     e.preventDefault();
     setCurrentPage(1);
     dispatch(filterCountriesByContinent(e.target.value));
+    setOrder(`Ordenado ${e.target.value}`);
+  };
+
+  var handleFilterByActivity = (e) => {
+    e.preventDefault();
+    setCurrentPage(1);
+    dispatch(filterCountriesByActivity(e.target.value));
     setOrder(`Ordenado ${e.target.value}`);
   };
   
@@ -104,8 +115,12 @@ export default function Home() {
           <option value={"asc"}> Mayor Poblacion </option>
           <option value={"desc"}> Menor Poblacion </option>
         </Select>
-        <Select>
-          <option>Filter by Tourist Activities</option>
+        <Select onChange={(e) => handleFilterByActivity(e)}>
+          <option>Filtrar por Actividad</option>
+        {Activities &&
+            Activities.map((a) => (
+              <option value={a} key={a}> {a} </option>
+            ))}
         </Select>
       </Filtros>
       <CountryContainer>
@@ -136,6 +151,7 @@ export default function Home() {
       <br/>
       <CurrentPage>Page {currentPage}</CurrentPage>
       <Paginado
+        // cambiarEstado={setcountriesPerPage}
         countriesPerPage={countriesPerPage}
         countries={Countries.length}
         paginado={paginado}

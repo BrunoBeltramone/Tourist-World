@@ -42,26 +42,30 @@ export const Cartas = styled.div`
 `
 
 export const FlechaPaginadoIzq = styled.button`
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
     margin-top: 11%;
     font-size: 4rem;
     width: 60px;
     height: 400px;
     color: ${colors.Primary};
     background-color: ${colors.SecondBlueCard};
+    transition: all 0.1s ease;
+
+    &:active{
+        background-color: ${colors.Orange};
+    }
 `
 export const FlechaPaginadoDer = styled.button`
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
     margin-top: 11%;
     font-size: 4rem;
     width: 60px;
     height: 400px;
     color: ${colors.Primary};
     background-color: ${colors.SecondBlueCard};
+    transition: all 0.1s ease;
+
+    &:active{
+        background-color: ${colors.Orange};
+    }
 `
 
 export const CurrentPage = styled.div`

@@ -21,6 +21,16 @@ router.post('/', async (req, res) => {
     res.send('Actividad creada')
 });
 
+router.get('/', async (req,res) => {
+    let actividades = await Activity.findAll()
+    
+    NombreActividades = actividades.map(a => a.nombre);
 
+    var act = Array.from(new Set (NombreActividades))
+
+    console.log(act)
+
+    return res.status(200).send(act)
+})
 
 module.exports = router;

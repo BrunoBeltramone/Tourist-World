@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Menu, MenuItemLink,  } from "./Paginado_Style";
 
-export default function Paginado({countries, countriesPerPage, paginado}){
+export default function Paginado({countries, countriesPerPage, paginado, cambiarEstado}){
 
     const pageNumbers = []
 
