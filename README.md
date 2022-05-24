@@ -10,15 +10,23 @@
 
 ## Objetivos del Proyecto
 
-- Construir una App utlizando React, Redux, Node y Sequelize.
-- Afirmar y conectar los conceptos aprendidos en la carrera.
-- Aprender mejores prácticas.
-- Aprender y practicar el workflow de GIT.
-- Usar y practicar testing.
+Desarrollo de una SPA (Single-page application) cuyo objetivo consistía en Presentar una página interactiva con los datos más interesantes de cada país y permitirle al usuario, crear actividades a realizar mediante un formulario Controlado, las cuales son asignadas a distintos países mediante una tabla intermedia. 
+ Entre sus Tantas funcionalidades destacan:
+♦️ Una Carta por país, la cual contaba con información básica del mismo.
+♦️ Sección especial para ver el Detalle de cada país y conocerlo en Profundidad.
+♦️ Searchbar para buscar un país por su nombre, ya sea en Inglés o en Español.
+♦️ Ordenamiento por orden alfabético (A-Z, Z-A).
+♦️ Ordenamiento por cantidad de habitantes.
+♦️ Filtrado por continentes.
+♦️ Filtrado a base de las actividades turísticas que se pueden efectuar en dicho País.
+♦️ Creación de una actividad turística mediante un formulario controlado.
+♦️ Paginado Dinámico
 
-## Horarios y Fechas
-
-El proyecto tendrá una duración máxima de tres semanas. En el caso de que completan todas las tareas antes de dicho lapso podrán avisar a su Instructor para coordinar una fecha de presentación del trabajo (DEMO).
+👨🏼‍💻 Tecnologías Usadas:
+♦️ FrontEnd: React para la creación de componentes y Redux para el Management State
+♦️ BackEnd: Node.js, Express.js
+♦️ Base de Datos: PostgreSQL, Sequelize
+♦️ Control de Versiones: Git/GitHub
 
 ## Comenzando
 
