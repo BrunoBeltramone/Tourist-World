@@ -4,36 +4,32 @@
 
 # Individual Project - Henry Countries
 
-<p align="left">
-  <img height="200" src="./countries.png" />
-</p>
-
-## Objetivos del Proyecto
+## Objetivo del Proyecto
 
 Desarrollo de una SPA (Single-page application) cuyo objetivo consistía en Presentar una página interactiva con los datos más interesantes de cada país y permitirle al usuario, crear actividades a realizar mediante un formulario Controlado, las cuales son asignadas a distintos países mediante una tabla intermedia. 
- Entre sus Tantas funcionalidades destacan:
-♦️ Una Carta por país, la cual contaba con información básica del mismo.
-♦️ Sección especial para ver el Detalle de cada país y conocerlo en Profundidad.
-♦️ Searchbar para buscar un país por su nombre, ya sea en Inglés o en Español.
-♦️ Ordenamiento por orden alfabético (A-Z, Z-A).
-♦️ Ordenamiento por cantidad de habitantes.
-♦️ Filtrado por continentes.
-♦️ Filtrado a base de las actividades turísticas que se pueden efectuar en dicho País.
-♦️ Creación de una actividad turística mediante un formulario controlado.
-♦️ Paginado Dinámico
+ Entre sus Tantas funcionalidades destacan:<br/><br/>
+♦️ Una Carta por país, la cual contaba con información básica del mismo. <br/>
+♦️ Sección especial para ver el Detalle de cada país y conocerlo en Profundidad. <br/>
+♦️ Searchbar para buscar un país por su nombre, ya sea en Inglés o en Español.<br/>
+♦️ Ordenamiento por orden alfabético (A-Z, Z-A).<br/>
+♦️ Ordenamiento por cantidad de habitantes.<br/>
+♦️ Filtrado por continentes.<br/>
+♦️ Filtrado a base de las actividades turísticas que se pueden efectuar en dicho País.<br/>
+♦️ Creación de una actividad turística mediante un formulario controlado.<br/>
+♦️ Paginado Dinámico.<br/>
 
-👨🏼‍💻 Tecnologías Usadas:
-♦️ FrontEnd: React para la creación de componentes y Redux para el Management State
-♦️ BackEnd: Node.js, Express.js
-♦️ Base de Datos: PostgreSQL, Sequelize
-♦️ Control de Versiones: Git/GitHub
+👨🏼‍💻 Tecnologías Usadas:<br/>
+♦️ FrontEnd: React para la creación de componentes y Redux para el Management State.<br/>
+♦️ BackEnd: Node.js, Express.js.<br/>
+♦️ Base de Datos: PostgreSQL, Sequelize.<br/>
+♦️ Control de Versiones: Git/GitHub.<br/>
 
-## Comenzando
+## Como levantar la App
 
  1. Forkear el repositorio para tener una copia del mismo en sus cuentas
  2. Clonar el repositorio en sus computadoras para comenzar a trabajar
-
-Tendrán un `boilerplate` con la estructura general tanto del servidor como de cliente.
+ 3. Hacer npm install en ambos modulos (api y client)
+ 4. Hacer npm Start en la carpeta api y en la carpeta client
 
 __IMPORTANTE:__ Es necesario contar minimamente con la última versión estable de Node y NPM. Asegurarse de contar con ella para poder instalar correctamente las dependecias necesarias para correr el proyecto.
 
@@ -66,37 +62,13 @@ Adicionalmente será necesario que creen desde psql una base de datos llamada `c
 
 El contenido de `client` fue creado usando: Create React App.
 
-## Enunciado
-
-La idea general es crear una aplicación en la cual se pueda ver información de  distintos paises utilizando la api externa [restcountries](https://restcountries.com/) y a partir de ella poder, entre otras cosas:
-
-  - Buscar paises
-  - Filtrarlos / Ordenarlos
-  - Crear actividades turísticas
-
-__IMPORTANTE__: Para las funcionalidades de filtrado y ordenamiento NO pueden utilizar los endpoints de la API externa que ya devuelven los resultados filtrados u ordenados sino que deben realizarlo ustedes mismos. En particular alguno de los ordenamientos o filtrados debe si o si realizarse desde el frontend.
-
-### Únicos Endpoints/Flags que pueden utilizar
-
-  - GET https://restcountries.com/v3/all
-  - GET https://restcountries.com/v3/name/{name}
-  - GET https://restcountries.com/v3/alpha/{code}
-
 ### Requerimientos mínimos:
 
 A continuación se detallaran los requerimientos mínimos para la aprobación del proyecto individial. Aquellos que deseen agregar más funcionalidades podrán hacerlo. En cuanto al diseño visual no va a haber wireframes ni prototipos prefijados sino que tendrán libertad de hacerlo a su gusto pero tienen que aplicar los conocimientos de estilos vistos en el curso para que quede agradable a la vista.
 
-__IMPORTANTE__: No se permitirá utilizar librerías externas para aplicar estilos a la aplicación. Tendrán que utilizar CSS con algunas de las opciones que vimos en dicha clase (CSS puro, CSS Modules o Styled Components)
+__IMPORTANTE__: En esta app no esta permitido utilizar librerías externas para aplicar estilos a la aplicación. Los estilos fueron aplicados con CSS, Styled Components.
 
-#### Tecnologías necesarias:
-- [ ] React
-- [ ] Redux
-- [ ] Express
-- [ ] Sequelize - Postgres
-
-#### Frontend
-
-Se debe desarrollar una aplicación de React/Redux que contenga las siguientes pantallas/rutas.
+#### Rutas
 
 __Pagina inicial__: deben armar una landing page con
 - [ ] Alguna imagen de fondo representativa al proyecto
@@ -173,9 +145,3 @@ __IMPORTANTE__: No está permitido utilizar los filtrados, ordenamientos y pagin
 - [ ] __POST /activity__:
   - Recibe los datos recolectados desde el formulario controlado de la ruta de creación de actividad turística por body
   - Crea una actividad turística en la base de datos
-
-
-#### Testing
-- [ ] Al menos tener un componente del frontend con sus tests respectivos
-- [ ] Al menos tener una ruta del backend con sus tests respectivos
-- [ ] Al menos tener un modelo de la base de datos con sus tests respectivos
